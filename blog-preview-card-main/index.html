@@ -24,7 +24,6 @@
     <style>
       body {
         background-color: #f4d04e;
-        border: 1px red solid;
         height: 100vh;
         padding: 0;
         margin: 0;
@@ -99,7 +98,12 @@
         font-size: var(--spacing-200, 24px);
         font-style: normal;
         font-weight: 800;
-        line-height: 150%; /* 36px */
+        line-height: 150%; 
+        transition: .1s;
+      }
+      .card-content h2:hover{
+        color: var(--color-yellow, #F4D04E);
+        transition: 0.1s;
       }
       .card-content p {
         color: var(--color-gray-500, #6b6b6b);
