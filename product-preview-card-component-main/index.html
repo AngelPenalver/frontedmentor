@@ -5,34 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      as="fonts"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap"
-      rel="stylesheet"
-      crossorigin
-      as="fonts"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap"
-      rel="stylesheet"
-      crossorigin
-      as="fonts"
-    />
+   
 
     <title>Frontend Mentor | Product preview card component</title>
 
@@ -67,7 +44,7 @@
         text-align: center;
         padding: 0;
       }
-      .card img {
+      .card img, picture {
         width: 100%;
         object-fit: cover;
         border-radius: 10px 10px 0 0;
@@ -81,6 +58,9 @@
       h4 {
         font-family: "Fraunces";
       }
+      p{
+        font-family: "Monserrat", sans-serif;
+      }
       .content h2 {
         font-size: clamp(2rem, 0.75rem + 1.5vw, 3rem);
         width: 100%;
@@ -93,7 +73,7 @@
         text-align: start;
         margin: 0.25rem 0;
         letter-spacing: 0.25rem;
-        font-family: "Monserat";
+        font-family: "Montserrat" !important;
       }
       #text {
         font-size: 1rem;
@@ -101,11 +81,10 @@
         text-align: start;
         margin: 0.25rem 0;
         line-height: 1.54rem;
-        font-family: "Monserat";
       }
       #price {
         color: hsl(158, 36%, 37%);
-        font-size: clamp(2rem, 0.75rem + 1.5vw, 3rem);
+        font-size: clamp(2rem, 0.75rem + 1vw, 2.5rem);
         text-align: start;
         width: fit-content;
         padding: 0;
@@ -144,16 +123,55 @@
         max-height: 2rem;
         max-width: 1rem;
       }
+      @media (min-width: 768px) {
+        .container{
+          justify-content:center;
+        }
+        .card{
+          display: flex;
+          justify-content: space-between;
+          gap: 0;
+          padding: 0;
+          width: 600px;
+          height: 420px;
+        }
+        .card picture, img{
+          border-radius: 10px 0 0 10px !important;
+          height: 100%;
+          width: 55%;
+        }
+        .content{
+          width: 45%;
+          padding: 1.5rem;
+        }
+        .content h2{
+          width: 90%;
+          line-height: 2rem;
+          margin-bottom: 1.5rem;
+          margin-top: 1rem;
+        }
+        .button{
+          width: 15rem;
+          padding: 1rem 1.5rem;
+        }
+        .price{
+          margin: 1rem 0;
+        }
+        #text{
+          width: 97%;
+          margin: 0;
+        }
+        
+      }
 </style>
   </head>
   <body>
     <div class="container">
       <div class="card">
-        <img
-          src="./images/image-product-mobile.jpg"
-          alt="img_mobile"
-          crossorigin
-        />
+        <picture>
+          <source srcset="./images/image-product-mobile.jpg" media="(max-width: 767px)" crossorigin>
+          <img src="./images/image-product-desktop.jpg" alt="Imagen del producto" crossorigin width="700">
+        </picture>
         <div class="content">
           <p id="label">PERFUME</p>
 
