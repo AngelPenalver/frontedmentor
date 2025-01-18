@@ -20,11 +20,11 @@ const {title, text, img, id, color} = Astro.props
         justify-content: center;
         align-items: end;
         width:300px;
-        height: 180px;
+        height: 240px;
         box-sizing: border-box;
         padding: 1.5rem;
         border-radius: 5px 5px 10px 10px;
-        gap: 1rem;
+        gap: 2rem;
         box-shadow: -1px 1px 30px #00000022;
     }
     .container h3{
@@ -35,7 +35,7 @@ const {title, text, img, id, color} = Astro.props
     }
     .container p{
         color: hsl(229, 6%, 66%);
-        font-size: 0.8rem;
+        font-size: clamp(0.8rem, 1rem + 1vw, 0.9rem);
         margin: 0;
         padding: 0;
         line-height: 1.5rem;
